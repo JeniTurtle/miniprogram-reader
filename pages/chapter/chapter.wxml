@@ -1,0 +1,44 @@
+<import src="/templates/loading/loading.wxml"/>
+
+<scroll-view scroll-y="true" scroll-top="{{scrollTop}}" bindscrolltolower="getMore" style="position:absolute; top:0; left:0; right:0; bottom:0;">
+
+  <view class="container {{background}}">
+    <view wx:if="{{!isLoading}}" class="article font-size-{{fontSize}}" bindtap="showControll">
+      <block wx:for="{{chapters}}" wx:key="*this">
+        <text class="title">
+          {{item.cname}}
+        </text>
+
+        <text class="body">
+          {{item.content}}
+        </text>
+      </block>  
+    </view>
+
+    <template is="loading" data="{{isLoading: isLoading}}" />
+
+    <view class="bottom-controll-panel {{isShowControll ? 'show-panel' : ''}}">
+      <view class="toBookShelf" wx:if="{{!hasBookshelf}}" bindtap="pushBookshelf">加入书架</view>
+      <view class="toBookShelf" wx:else bindtap="pullBookshelf">移出书架</view>
+
+      <view class="item">
+        <text class="btn font-btn-w {{fontSize == 0 ? 'disable' : ''}}" bindtap="fontReduce">Aa-</text> 
+        <text class="btn progress-bar">
+          <text class="content" style="width: {{ 20 * fontSize }}%;"></text>
+        </text> 
+        <text class="btn font-btn-w {{fontSize == 5 ? 'disable' : ''}}" bindtap="fontPlus">Aa+</text>
+      </view>
+      <view class="item">
+        <text class="btn square fl {{background == 'default' ? 'active': ''}}" data-background="default" bindtap="setBackground">默认</text> 
+        <text class="btn square {{background == 'night' ? 'active': ''}}" data-background="night" bindtap="setBackground">夜间</text> 
+        <text class="btn square fr {{background == 'eyeshield' ? 'active': ''}}" data-background="eyeshield" bindtap="setBackground">护眼</text>
+      </view> 
+      <view class="item">
+        <text class="btn chapter-btn-w fl {{chapters[chapters.length - 1].pid < 1 ? 'disable' : ''}}" bindtap="jumpChapter" data-chapter-id="{{chapters[chapters.length - 1].pid}}">上一章</text> 
+        <navigator hover-class='none' class="btn directory" url="../chapterList/chapterList?bookId={{chapters[chapters.length - 1].id}}">目录</navigator> 
+        <text class="btn chapter-btn-w fr {{chapters[chapters.length - 1].nid < 1 ? 'disable' : ''}}"  bindtap="jumpChapter" data-chapter-id="{{chapters[chapters.length - 1].nid}}">下一章</text>
+      </view>
+    </view>
+  </view>
+
+</scroll-view>

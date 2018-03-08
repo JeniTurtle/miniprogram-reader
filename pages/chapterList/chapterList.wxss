@@ -1,0 +1,43 @@
+@import "/templates/loading/loading.wxss";
+
+.chapter-header {
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+  background: #fff;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.chapter-header .title {
+  font-weight: 600;
+}
+
+.chapter-header .count {
+  font-size: 24rpx;
+  color: #999;
+  padding-left: 12rpx;
+  font-weight: 300;
+}
+
+.chapter-header .sort {
+  font-size: 26rpx;
+  font-weight: 300;
+}
+
+.chapter-list {
+  background: #fff;
+  padding: 0 30rpx;
+}
+
+.chapter-item {
+  color: #999;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #f8f8f8;
+  font-weight: 300;
+  font-size: 24rpx;  
+}
+
+.item-name {
+  padding-left: 4rpx;
+}

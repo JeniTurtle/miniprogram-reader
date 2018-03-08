@@ -1,0 +1,10 @@
+<template name="navigation">
+  <view class="c-page-nav">
+    <block wx:for="{{navList}}" wx:key="*this">
+      <view class="nav-item" style="{{'width:' + (100 / navList.length) + '%'}}" data-key="{{index}}" bindtap="onClick">
+        <text wx:if="{{currentIndex == index}}" class="text active">{{item.name}}</text>
+        <text wx:else class="text">{{item.name}}</text>
+      </view> 
+    </block>
+  </view>  
+</template> 

@@ -1,0 +1,57 @@
+.header {
+  height: 90rpx;
+  background-color: #b93321;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+}
+
+.header .site-type {
+  border: 1rpx solid #fff;
+  margin: 0 auto;
+  display: inline-block;
+  border-radius: 8rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+
+.header .site-type .item {
+  display: inline-block;
+  padding: 6rpx 46rpx;
+  color: #fff;
+  font-weight: 300;
+}
+
+.header .site-type .item.active {
+  background:#fff;
+  color: #b93321;
+}
+
+.header .search-icon {
+  width: 44rpx;
+  height: 44rpx;
+  margin: 24rpx 28rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.header .search-icon .img {
+  width: 100%;
+  height: 100%;
+}
+
+.header .bookshelf-icon {
+  width: 42rpx;
+  height: 42rpx;
+  margin: 24rpx 28rpx;
+  position: absolute;
+  left: 0;
+}
+
+.header .bookshelf-icon .img {
+  width: 100%;
+  height: 100%;
+}

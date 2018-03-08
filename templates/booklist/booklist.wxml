@@ -1,0 +1,23 @@
+<template name="booklist">
+  <view class="book-list">
+    <block wx:for="{{booklist}}" wx:key="*this">
+      <navigator wx:if="{{item.Id}}" url="../bookInfo/bookInfo?bookId={{item.Id}}" class="book-item" hover-class="none">
+        <image src="{{item.Img}}" mode="scaleToFill" class="book-img"></image>
+        <view class="book-content">
+          <view wx:if="{{showScore}}" class="score">
+            <text>{{item.Score}}分</text>
+          </view>
+          <view class="name">
+            <text>{{item.Name}}</text>
+          </view>
+          <view class="category">
+            <text class="author">{{item.Author}}</text>
+            <text class="split">|</text>
+            <text class="type">{{item.CName}}</text>
+          </view>
+          <text class="desc">{{item.Desc}}</text>
+        </view>
+      </navigator>
+    </block>  
+  </view>
+</template>

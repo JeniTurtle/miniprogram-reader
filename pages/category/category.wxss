@@ -1,0 +1,43 @@
+.category-list {
+  padding: 0 30rpx;
+  background: #fff;
+}
+
+.category-item {
+  height: 120rpx;
+  line-height: 120rpx;
+  font-size: 32rpx;
+  background-size: 100% 1px;
+  background-image: linear-gradient(180deg,transparent 50%,#ddd 0);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.category-item .item-img {
+  height: 80rpx;
+  width: 70rpx;
+  margin-top: 20rpx;
+  float: left;
+}
+
+.category-item .item-name {
+  padding-left: 30rpx;
+}
+
+.category-item .item-count {
+  float: right;
+  color: #b93321;
+  font-size: 30rpx;
+}
+
+.category-item .item-icon {
+  float: right;
+  padding-left: 0rpx;
+  color: #999;
+  font-size: 34rpx;
+  font-weight: 300;
+  transform: rotate(-90deg);
+  top: 40rpx;
+  position: relative;
+  background-position-y: 100%;
+}

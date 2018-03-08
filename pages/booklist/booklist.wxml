@@ -1,0 +1,21 @@
+<import src="/templates/navigation/navigation.wxml"/>
+
+<view class='container'>
+  <header id='header'></header>
+  <template is="navigation" data="{{navList: navList, currentIndex: currentIndex}}"/>
+
+  <view class="booklist">
+    <block wx:for="{{booklist}}" wx:key="*this">
+      <navigator wx:if="{{item.ListId}}" url="../booklistDetail/booklistDetail?booklistId={{item.ListId}}" class="book-item" hover-class="none">
+          <image src="{{item.Cover}}" mode="scaleToFill" class="book-img"></image>
+          <view class="book-content">
+            <view class="name">
+              <text>{{item.Title}}</text>
+            </view>
+            <view class="author">共{{item.BookCount}}本<text class="time">[{{item.UpdateTime}}]</text></view>
+            <text class="desc">{{item.Description}}</text>
+          </view>
+        </navigator>
+      </block>  
+  </view>
+</view>

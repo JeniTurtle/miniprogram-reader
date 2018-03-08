@@ -1,0 +1,15 @@
+<view class='container'>
+
+  <view class="category-list">
+  
+    <block wx:for="{{categoryList}}" wx:key="*this">
+      <navigator class="category-item" hover-class="none" url="../categoryList/categoryList?categoryId={{item.Id}}&genre=hot">
+        <image class="item-img" mode="scaleToFill" src="/images/category/category-{{index}}.jpg"></image>
+        <text class="item-name">{{item.Name}}</text>
+        <text class="item-icon arrow"></text>
+        <text class="item-count">{{item.Count}}</text>
+      </navigator>
+    </block>
+    
+  </view>
+</view>

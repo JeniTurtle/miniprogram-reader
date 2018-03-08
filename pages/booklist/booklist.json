@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "书单列表",
+  "usingComponents": {
+    "header": "/components/header/header"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/rankList/rankList",
+    "pages/rank/rank",
+    "pages/search/search",
+    "pages/category/category",
+    "pages/categoryList/categoryList",
+    "pages/bookInfo/bookInfo",
+    "pages/chapterList/chapterList",
+    "pages/chapter/chapter",
+    "pages/bookshelf/bookshelf",
+    "components/header/header",
+    "pages/booklist/booklist",
+    "pages/booklistDetail/booklistDetail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "#ffffff",
+    "navigationBarTitleText": "读书神器",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": "true"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar/index.png",
+        "selectedIconPath": "images/tabbar/index-2.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "images/tabbar/category.png",
+        "selectedIconPath": "images/tabbar/category-2.png"
+      },
+      {
+        "pagePath": "pages/rank/rank",
+        "text": "排行",
+        "iconPath": "images/tabbar/rank.png",
+        "selectedIconPath": "images/tabbar/rank-2.png"
+      },
+      {
+        "pagePath": "pages/booklist/booklist",
+        "text": "书单",
+        "iconPath": "images/tabbar/booklist.png",
+        "selectedIconPath": "images/tabbar/booklist-2.png"
+      }
+    ],
+    "color": "#666",
+    "selectedColor": "#b93321",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  }
+}

@@ -1,0 +1,92 @@
+@import "/templates/booklist/booklist.wxss";
+
+.book-detail .book-item {
+  overflow: hidden;
+  display: block;
+  height: 210rpx;
+  background: #fff;
+  padding: 40rpx;
+}
+
+.book-detail .book-item .book-img {
+  float: left;
+  width: 160rpx;
+  height: 210rpx;
+  overflow: hidden;
+}
+
+.book-detail .book-item .book-content {
+  margin-left: 176rpx;
+  padding-left: 20rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.book-detail .book-item .book-content .name {
+  color: #333!important;
+  font-weight: 400;
+  font-size: 32rpx;
+  padding-bottom: 6rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.book-detail .book-item .book-content .category {
+  height: 54rpx;
+  line-height: 52rpx;
+}
+
+.book-detail .book-item .book-content .author {
+  color: #666666;
+}
+
+.book-detail .book-item .book-content .status {
+  color: #b93321;
+}
+
+
+.read-desc {
+  position: relative;
+  background: #fff;
+  padding:0 40rpx 40rpx;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  font-weight: 300;
+}
+
+.read-desc .content {
+  padding-top: 40rpx;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  -webkit-transition: all .4s ease;
+  border-top: 1px solid #ebebeb;
+}
+
+.read-desc .moreDesc {
+  height: auto !important;
+  overflow: auto !important;
+  display: block !important;
+}
+
+.read-desc .arrow {
+  position: absolute;
+  bottom: 30rpx;
+  right: 20rpx;
+  -webkit-transition: all .1s ease;
+}
+
+.arrow.up {
+  -webkit-transform: rotate(180deg);
+}
+
+.mt20 {
+  margin-top: 20rpx;
+}

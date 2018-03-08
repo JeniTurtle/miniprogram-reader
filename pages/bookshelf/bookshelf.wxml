@@ -1,0 +1,44 @@
+<view class='container'>
+  <view class="book-list" wx:if="{{bookshelf.length > 0}}">
+    <block wx:for="{{bookshelf}}" wx:key="*this">
+      <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}} {{item.isHide ? 'hide' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove">
+        <view wx:if="{{item.Id}}" data-first-chapter-id="{{item.FirstChapterId}}" bindtap="jumpChapter" data-book-id="{{item.Id}}" class="book-item content">
+          <image src="{{item.Img}}" mode="scaleToFill" class="book-img"></image>
+          <view class="book-content">
+            <view wx:if="{{item.BookVote.Score}}" class="score">
+              <text>{{item.BookVote.Score}}分</text>
+            </view>
+            <view class="name">
+              <text>{{item.Name}}</text>
+            </view>
+            <view class="category">
+              <view class="fl w-fill">
+                作者：
+                <text class="author">{{item.Author}}</text>
+              </view>
+
+              <view class="fl w-fill">
+                状态：
+                <text class="{{item.BookStatus == '完结' ? 'status success' : 'status'}}">{{item.BookStatus}}</text>
+              </view>
+              
+              <view class="fl w-fill">
+                <view class="chapter">
+                  <text class="time">[{{item.LastTime}}]</text>
+                  {{item.LastChapter}}
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="del" catchtap="del" data-index="{{index}}">删除</view>
+      </view>
+    </block>
+  </view>    
+
+  <view wx:else class="null-data">
+    <image src="/images/search/ku.png" class="null-img" mode="aspectFill"></image>
+    <view class="null-text">书架空空如也，<navigator class="find-book" hover-class='none' open-type="switchTab" url="../index/index">快去逛逛找书</navigator></view>
+  </view>
+</view>

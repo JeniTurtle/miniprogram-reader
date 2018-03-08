@@ -1,0 +1,10 @@
+<import src="/templates/navigation/navigation.wxml"/>
+<import src="/templates/booklist/booklist.wxml"/>
+
+<view class='container'>
+  <template is="navigation" data="{{navList: navList, currentIndex: currentIndex}}"/>
+
+  <view class="c-book-section">
+    <template is="booklist" data="{{booklist: rankList, showScore: true}}" />
+  </view>
+</view>

@@ -1,0 +1,119 @@
+<view class='container'>
+  <view class="book-detail">
+    <view class="book-item">
+      <image src="{{bookInfo.Img}}" mode="scaleToFill" class="book-img"></image>
+      <view class="book-content">
+        <view wx:if="{{bookInfo.BookVote.Score}}" class="score">
+          <text>{{bookInfo.BookVote.Score}}分</text>
+        </view>
+        <view class="name">
+          <text>{{bookInfo.Name}}</text>
+        </view>
+        <view class="category">
+          <view class="fl w-fill">
+            类型：
+            <text class="type">{{bookInfo.CName}}</text>
+          </view>
+
+          <view class="fl w-fill">
+            作者：
+            <text class="author">{{bookInfo.Author}}</text>
+          </view>
+          
+          <view class="fl w-fill">
+            状态：
+            <text class="{{bookInfo.BookStatus == '完结' ? 'status success' : 'status'}}">{{bookInfo.BookStatus}}</text>
+          </view>
+        </view>
+      </view>
+    </view>  
+
+    <view class="read-link">
+      <view class="button white-btn fl" bindtap="pushBookshelf" wx:if="{{!hasBookshelf}}">
+        加入书架
+      </view>
+      <view class="button white-btn fl" bindtap="pullBookshelf" wx:else>
+        移除书架
+      </view>
+      <view class="button red-btn fr" hover-class='none' bindtap="jumpChapter">
+        开始阅读
+      </view> 
+    </view>
+
+    <view wx:if="{{bookInfo.Desc}}" class="read-desc">
+      <view class="{{moreDesc ? 'content moreDesc' : 'content'}}" bindtap="showMoreDesc">{{bookInfo.Desc}}</view>
+      <view class="{{moreDesc ? 'arrow up' : 'arrow'}}"></view>
+    </view>
+
+    <view class="chapter-item">
+      <navigator class="item-detail" hover-class="none" url="../chapterList/chapterList?bookId={{bookInfo.Id}}">
+        <text class="fl">目录</text>
+        <view class="arrow"></view> 
+        <view class="text">
+          <text class="time">[{{bookInfo.LastTime}}]</text> 
+          {{bookInfo.LastChapter}}
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+  <view wx:if="{{bookInfo.SameUserBooks.length > 0}}" class=".c-book-section same-user-book mt20">
+    <view class="title">
+      作者其他作品
+    </view>
+
+    <view class="book-list">
+      <block wx:for="{{bookInfo.SameUserBooks}}" wx:key="{{*this}}">  
+        <navigator url="../bookInfo/bookInfo?bookId={{item.Id}}" class="{{index == 0 ? 'book-item first' : 'book-item'}}" hover-class="none">
+          <image mode="scaleToFill" src="{{item.Img}}" class="book-img"></image>
+          <view class="book-content">
+            <text class="name db">{{item.Name}}</text>
+            <text class="author db">作者：{{item.Author}}</text>
+            <text class="last-chapter author db">最近更新：{{item.LastChapter}}</text>
+          </view>
+        </navigator>
+      </block>
+      <view class="list-more" bindtap="showMoreBooks">
+        更多
+        <text class="{{moreBooks ? 'arrow up' : 'arrow'}}"></text>
+      </view>  
+    </view>
+  </view>
+
+  <view class=".c-book-section same-user-book mt20">
+    <view class="title">
+      你可能感兴趣
+    </view>
+
+    <swiper class="book-swiper" indicator-dots="{{true}}" autoplay="{{false}}" interval="{{4000}}" duration="{{300}}" indicator-active-color='#d26050'>
+    
+      <swiper-item>
+        <block wx:for="{{bookInfo.SameCategoryBooks}}" wx:key="*this">
+          <navigator wx:if="{{index < 4}}" class="book-swiper-item" hover-class="none" url="../bookInfo/bookInfo?bookId={{item.Id}}">
+            <image mode="aspectFill" class="image" src="{{item.Img}}"/>
+            <text class="text">{{item.Name}}</text>
+          </navigator>  
+        </block>
+      </swiper-item>
+
+      <swiper-item>
+        <block wx:for="{{bookInfo.SameCategoryBooks}}" wx:key="*this">
+          <navigator wx:if="{{index > 3 && index < 8}}" class="book-swiper-item" hover-class="none" url="../bookInfo/bookInfo?bookId={{item.Id}}">
+            <image mode="aspectFill" class="image" src="{{item.Img}}"/>
+            <text class="text">{{item.Name}}</text>
+          </navigator>  
+        </block>
+      </swiper-item>
+
+      <swiper-item>
+        <block wx:for="{{bookInfo.SameCategoryBooks}}" wx:key="*this">
+          <navigator wx:if="{{index > 7 && index < 12}}" class="book-swiper-item" hover-class="none" url="../bookInfo/bookInfo?bookId={{item.Id}}">
+            <image mode="aspectFill" class="image" src="{{item.Img}}"/>
+            <text class="text">{{item.Name}}</text>
+          </navigator>  
+        </block>
+      </swiper-item>
+
+    </swiper>  
+  </view>
+</view>

@@ -1,0 +1,88 @@
+.c-book-section {
+  background: #ffffff;
+}
+
+.c-book-section .book-list {
+  padding: 0 30rpx;
+}
+
+.c-book-section .book-item {
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  height: 218rpx;
+  padding-bottom: 32rpx;
+}
+
+.c-book-section .book-item .book-img {
+  float: left;
+  width: 160rpx;
+  height: 200rpx;
+  overflow: hidden;
+}
+
+.c-book-section .book-item .book-content {
+  height: 100%;
+  margin-left: 176rpx;
+  padding-left: 10rpx;
+  overflow: hidden;
+  background-size: 100% 1px;
+  background-image: linear-gradient(180deg,transparent 50%,#ddd 0);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: relative;
+}
+
+.c-book-section .book-item .book-content .score {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #b93321;
+  font-size: 30rpx;
+}  
+
+.c-book-section .book-item .book-content .name {
+  height: 46rpx;
+  color: #333!important;
+  font-weight: 400;
+  font-size: 30rpx;
+}
+
+.c-book-section .book-item .book-content .desc {
+  margin: 5rpx 0 10rpx;
+  height: 84rpx;
+  line-height: 42rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #999;
+  font-size: 28rpx;
+  font-weight: 200;
+}
+
+.c-book-section .book-item .book-content .category {
+  height: 54rpx;
+  line-height: 52rpx;
+}
+
+.c-book-section .book-item .book-content .author {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.c-book-section .book-item .book-content .type {  
+  border: 1px solid #b93321;
+  color: #b93321;
+  font-style: normal;
+  font-size: 22rpx;
+  padding: 0 6rpx;
+  transform: scale(.8);
+  border-radius: 4px;
+}
+
+.c-book-section .book-item .book-content .split {
+  padding: 0 15rpx;
+}

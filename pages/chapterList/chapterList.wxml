@@ -1,0 +1,21 @@
+<import src="/templates/loading/loading.wxml"/>
+
+<template is="loading" data="{{isLoading: isLoading}}" />
+
+<view wx:if="{{!isLoading}}" class='container'>
+  <view class="chapter-header">
+    <text class="title">目录</text>
+    <text class="count">共{{chapterList.length}}章</text>
+    <text wx:if="{{sortType}}" class="sort fr" bindtap="sort">倒序</text>
+    <text wx:else class="sort fr" bindtap="sort">正序</text>
+  </view>
+  <view class="chapter-list">
+    <block wx:for="{{chapterList}}" wx:key="*this">
+      <navigator class="chapter-item" hover-class="none" url="../chapter/chapter?bookId={{bookId}}&chapterId={{item.id}}">
+        <!-- <text wx:if="{{sortType}}" class="item-order">{{index + 1}} </text>
+        <text wx:else class="item-order">{{chapterList.length - index}} </text> -->
+        <text class="item-name">{{item.name}}</text>
+      </navigator>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,123 @@
+<import src="/templates/booklist/booklist.wxml"/>
+
+<view class='container pt90'>
+
+  <header id='header'></header>
+  
+  <swiper class="index-banner" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" duration="{{500}}" indicator-active-color='#d26050'>
+    <block wx:for="{{banners}}" wx:key="*this">
+      <swiper-item wx:if="{{item.imgurl}}">
+        <navigator wx:if="{{item.type == 'book'}}" hover-class="none" url="../bookInfo/bookInfo?bookId={{item.param}}">
+          <image src="{{item.imgurl}}" mode="aspectFill" class="slide-image"/>
+        </navigator>  
+        <navigator wx:if="{{item.type == 'booklist'}}" hover-class="none" url="../booklistDetail/booklistDetail?booklistId={{item.param}}">
+          <image src="{{item.imgurl}}" mode="aspectFill" class="slide-image"/>
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="index-nav">
+    <navigator class="nav-item" url="../rankList/rankList?genre=commend&cycle=week" hover-class="none">
+      <image src="/images/index/tuijian.png" mode="aspectFill" class="nav-icon"/>
+      <text class="nav-title">推荐</text>
+    </navigator>
+    <navigator class="nav-item" url="../rankList/rankList?genre=collect&cycle=week" hover-class="none">
+      <image src="/images/index/shoucang.png" mode="aspectFill" class="nav-icon"/>
+      <text class="nav-title">收藏</text>
+    </navigator>
+    <navigator class="nav-item" url="../rankList/rankList?genre=vote&cycle=week" hover-class="none">
+      <image src="/images/index/pingfen.png" mode="aspectFill" class="nav-icon"/>
+      <text class="nav-title">评分</text>
+    </navigator>
+    <navigator class="nav-item" url="../rankList/rankList?genre=over&cycle=week" hover-class="none">
+      <image src="/images/index/wanjie.png" mode="aspectFill" class="nav-icon"/>
+      <text class="nav-title">完结</text>
+    </navigator>
+    <navigator class="nav-item" url="../rankList/rankList?genre=hot&cycle=week" hover-class="none">
+      <image src="/images/index/zuire.png" mode="aspectFill" class="nav-icon"/>
+      <text class="nav-title">最热</text>
+    </navigator>
+  </view>
+
+  <view class="top-search">
+      <input type="text" placeholder="{{searchVal}}" class="search-input" bindinput="onInputChange"></input>
+      <view class="search-btn" bindtap="onSearch" data-default-val="{{searchVal}}">
+          <image class="img" src="/images/index/search.png" mode="aspectFill"></image>
+      </view>
+  </view>
+  <view class="c-book-section plr30">
+    <view class="title">
+      重磅推荐
+      <navigator hover-class="none" class='more' url="../rankList/rankList?genre=commend&cycle=week">更多<text class="arrow-icon arrow"></text></navigator>
+    </view>
+    <swiper class="book-swiper" indicator-dots="{{true}}" autoplay="{{false}}" interval="{{4000}}" duration="{{300}}" indicator-active-color='#d26050'>
+    
+      <swiper-item>
+        <block wx:for="{{commendRank}}" wx:key="*this">
+          <navigator wx:if="{{index < 3}}" class="book-swiper-item" hover-class="none" url="../bookInfo/bookInfo?bookId={{item.Id}}">
+            <image mode="aspectFill" class="image" src="{{item.Img}}"/>
+            <text class="text">{{item.Name}}</text>
+          </navigator>  
+        </block>
+      </swiper-item>
+
+      <swiper-item>
+        <block wx:for="{{commendRank}}" wx:key="*this">
+          <navigator wx:if="{{index > 2 && index < 6}}" class="book-swiper-item" hover-class="none" url="../bookInfo/bookInfo?bookId={{item.Id}}">
+            <image mode="aspectFill" class="image" src="{{item.Img}}"/>
+            <text class="text">{{item.Name}}</text>
+          </navigator>  
+        </block>
+      </swiper-item>
+
+      <swiper-item>
+        <block wx:for="{{commendRank}}" wx:key="*this">
+          <navigator wx:if="{{index > 5 && index < 9}}" class="book-swiper-item" hover-class="none" url="../bookInfo/bookInfo?bookId={{item.Id}}">
+            <image mode="aspectFill" class="image" src="{{item.Img}}"/>
+            <text class="text">{{item.Name}}</text>
+          </navigator>  
+        </block>
+      </swiper-item>
+
+      <swiper-item>
+        <block wx:for="{{commendRank}}" wx:key="*this">
+          <navigator wx:if="{{index > 8 && index < 12}}" class="book-swiper-item" hover-class="none" url="../bookInfo/bookInfo?bookId={{item.Id}}">
+            <image mode="aspectFill" class="image" src="{{item.Img}}"/>
+            <text class="text">{{item.Name}}</text>
+          </navigator>  
+        </block>
+      </swiper-item>
+
+    </swiper>
+  </view>
+  <view class="c-book-section mt20">
+    <view class="title">
+      火热新书
+      <navigator hover-class="none" class='more'  url="../rankList/rankList?genre=new&cycle=week">更多<text class="arrow-icon arrow"></text></navigator>
+    </view>
+    <template is="booklist" data="{{booklist: newRank}}" />
+  </view>
+
+  <view class="c-book-section mt20">
+    <view class="title">
+      热门连载
+      <navigator hover-class="none" class='more' url="../rankList/rankList?genre=hot&cycle=week">更多<text class="arrow-icon arrow"></text></navigator>
+    </view>
+    <template is="booklist" data="{{booklist: hotRank}}" />
+  </view>
+
+  <view class="c-book-section plr30 mt20">
+    <view class="title">
+      完本精选
+      <navigator hover-class="none" class='more' url="../rankList/rankList?genre=over&cycle=week">更多<text class="arrow-icon arrow"></text></navigator>
+    </view>
+    <block wx:for="{{overRank}}" wx:key="*this">
+      <navigator class="book-swiper-item end-book-item" hover-class="none"  url="../bookInfo/bookInfo?bookId={{item.Id}}">
+        <image mode="aspectFill" class="image" src="{{item.Img}}"/>
+        <text class="text">{{item.Name}}</text>
+      </navigator>  
+    </block>
+  </view>
+
+</view>

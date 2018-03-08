@@ -1,0 +1,30 @@
+/* components/navigation/navigation.wxss */
+
+.c-page-nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  height: 84rpx;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.c-page-nav .nav-item {
+  height: 54rpx;
+  margin-top: 16rpx;
+  line-height: 54rpx;
+  float: left;
+  text-align: center;
+  color: #b93321;
+  font-size: 30rpx;
+  font-weight: 400;
+}
+
+.c-page-nav .text {
+  padding: 19rpx 0;
+}
+
+.c-page-nav .active {
+  border-bottom: 2px solid #b93321;
+}

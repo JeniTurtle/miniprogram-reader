@@ -1,0 +1,25 @@
+<import src="/templates/booklist/booklist.wxml"/>
+
+<view class='container'>
+  <view class="top-search">
+      <input type="text" value="{{searchVal}}" class="search-input" bindinput="onInputChange"></input>
+      <view class="search-btn" bindtap="onSearch">
+          <image class="img" src="/images/index/search.png" mode="aspectFill"></image>
+      </view>
+  </view>
+  <view wx:if="{{commendRank.length > 0}}" class="c-book-section pt0">
+    <view class="title">
+      推荐榜单
+      <navigator hover-class="none" class='more' url="../rankList/rankList?genre=commend&cycle=week">更多<text class="arrow-icon arrow"></text></navigator>
+    </view>
+    <template is="booklist" data="{{booklist: commendRank, showScore: true}}" />
+  </view>
+  <view wx:elif="{{searchList.length > 0}}" class="c-book-section">
+    <template is="booklist" data="{{booklist: searchList}}" />
+  </view>
+  <view wx:else class="null-data">
+    <image src="/images/search/ku.png" class="null-img" mode="aspectFill"></image>
+    <text class="null-text">未找到你搜索的书籍</text>
+  </view>
+</view>
+

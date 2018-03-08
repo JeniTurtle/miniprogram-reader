@@ -1,0 +1,55 @@
+<import src="/templates/booklist/booklist.wxml"/>
+
+<view class='container pt90'>
+
+  <header id='header'></header>
+
+  <view class="c-book-section">
+    <view class="title">
+      热门榜单
+      <navigator hover-class="none" class='more' url="../rankList/rankList?genre=hot&cycle=week">更多<text class="arrow-icon arrow"></text></navigator>
+    </view>
+    <template is="booklist" data="{{booklist: hotRank, showScore: true}}" />
+  </view>
+  
+  <view class="c-book-section mt20">
+    <view class="title">
+      完结榜单
+      <navigator hover-class="none" class='more' url="../rankList/rankList?genre=over&cycle=week">更多<text class="arrow-icon arrow"></text></navigator>
+    </view>
+    <template is="booklist" data="{{booklist: overRank, showScore: true}}" />
+  </view>
+
+  <view class="c-book-section mt20">
+    <view class="title">
+      推荐榜单
+      <navigator hover-class="none" class='more' url="../rankList/rankList?genre=commend&cycle=week">更多<text class="arrow-icon arrow"></text></navigator>
+    </view>
+    <template is="booklist" data="{{booklist: commendRank, showScore: true}}" />
+  </view>
+
+  <view class="c-book-section mt20">
+    <view class="title">
+      收藏榜单
+      <navigator hover-class="none" class='more' url="../rankList/rankList?genre=collect&cycle=week">更多<text class="arrow-icon arrow"></text></navigator>
+    </view>
+    <template is="booklist" data="{{booklist: collectRank, showScore: true}}" />
+  </view>
+
+  <view class="c-book-section mt20">
+    <view class="title">
+      新书榜单
+      <navigator hover-class="none" class='more' url="../rankList/rankList?genre=new&cycle=week">更多<text class="arrow-icon arrow"></text></navigator>
+    </view>
+    <template is="booklist" data="{{booklist: newRank, showScore: true}}" />
+  </view>
+
+  <view class="c-book-section mt20">
+    <view class="title">
+      评分榜单
+      <navigator hover-class="none" class='more' url="../rankList/rankList?genre=vote&cycle=week">更多<text class="arrow-icon arrow"></text></navigator>
+    </view>
+    <template is="booklist" data="{{booklist: voteRank, showScore: true}}" />
+  </view>
+
+</view>

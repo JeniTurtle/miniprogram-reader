@@ -1,0 +1,251 @@
+@import "/templates/booklist/booklist.wxss";
+
+.book-detail .book-item {
+  overflow: hidden;
+  display: block;
+  height: 210rpx;
+  background: #fff;
+  padding: 40rpx;
+}
+
+.book-detail .book-item .book-img {
+  float: left;
+  width: 160rpx;
+  height: 210rpx;
+  overflow: hidden;
+}
+
+.book-detail .book-item .book-content {
+  margin-left: 176rpx;
+  padding-left: 20rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.book-detail .book-item .book-content .score {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #b93321;
+  font-size: 30rpx;
+}  
+
+.book-detail .book-item .book-content .name {
+  height: 46rpx;
+  color: #333!important;
+  font-weight: 400;
+  font-size: 32rpx;
+  padding-bottom: 6rpx;
+}
+
+.book-detail .book-item .book-content .category {
+  height: 54rpx;
+  line-height: 52rpx;
+}
+
+.book-detail .book-item .book-content .author {
+  color: #666666;
+}
+
+.book-detail .book-item .book-content .status {
+  color: #b93321;
+}
+
+.book-detail .book-item .book-content .status.success {
+  color: green;
+}
+
+.book-detail .book-item .book-content .type {
+  color: #b93321;
+}
+
+.read-link {
+  padding: 0 40rpx 40rpx;
+  background: #fff;
+  overflow: hidden;
+}
+
+.read-link .button {
+  width: 45%;
+  height: 74rpx;
+  line-height: 74rpx;
+  border-radius: 2px;
+  text-align: center;
+  border: 1px solid #b93321;
+  font-size: 30rpx;
+  font-weight: 300;
+}
+
+.read-link .white-btn {
+  background: #fff;
+  color: #b93321;
+}
+
+.read-link .red-btn {
+  background: #b93321;
+  color: #fff;
+}
+
+.read-desc {
+  position: relative;
+  background: #fff;
+  padding:0 40rpx 40rpx;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  font-weight: 300;
+}
+
+.read-desc .content {
+  padding-top: 40rpx;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  -webkit-transition: all .4s ease;
+  border-top: 1px solid #ebebeb;
+}
+
+.read-desc .moreDesc {
+  height: auto !important;
+  overflow: auto !important;
+  display: block !important;
+}
+
+.read-desc .arrow {
+  position: absolute;
+  bottom: 30rpx;
+  right: 20rpx;
+  -webkit-transition: all .1s ease;
+}
+
+.arrow.up {
+  -webkit-transform: rotate(180deg);
+}
+
+.chapter-item {
+  background: #fff;
+  padding: 0 40rpx 40rpx;
+  line-height: 40rpx;
+  color: #333;
+}
+
+.chapter-item .item-detail {
+  position: relative;
+  padding-top: 40rpx;
+  border-top: 1px solid #f4f4f4;
+  overflow: hidden;
+}
+
+.chapter-item .item-detail .text {
+  float: right;
+  display: block;
+  max-width: 76%;
+  color: #999;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 24rpx;
+  font-weight: 300;
+}
+
+.chapter-item .item-detail .text .time {
+  padding-right: 6rpx;
+  color: #b93321;
+}
+
+.chapter-item .item-detail .arrow {
+  width: 36rpx;
+  float: right;
+  background-position-y: 100%;
+  transform: rotate(-90deg);
+}
+
+.c-book-section .book-item {
+  height: 200rpx;
+  background-size: 100% 1px;
+  background-image: linear-gradient(180deg,transparent 50%,#ddd 0);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: relative;
+  padding-top: 30rpx;
+}
+
+.c-book-section .book-item.first {
+  padding-top: 0;
+}
+
+.c-book-section .book-item .book-img {
+  width: 156rpx;
+}
+
+.c-book-section .book-item .book-content {
+  height: 200rpx;
+  background: none;
+}
+
+.c-book-section .book-item .book-content .name {
+  font-size: 32rpx;
+  padding-top: 6rpx;
+}
+
+.c-book-section .book-item .book-content .author {
+  padding-top: 20rpx;
+}
+
+.c-book-section .list-more {
+  height: 72rpx;
+  text-align: center;
+  line-height: 72rpx;
+  font-size: 30rpx;
+  color: #b93321;
+  position: relative;
+}
+
+.c-book-section .list-more .arrow {
+  display: inline-block;
+  top: 10rpx;
+  left: -6rpx;
+  position: relative;
+  -webkit-transition: all .1s ease;
+}
+
+
+.c-book-section .book-swiper {
+  height: 320rpx;
+  overflow: hidden;
+  padding: 0 15rpx;
+}
+
+.c-book-section .book-swiper-item {
+  float: left;
+  width: 25%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  height: 320rpx;
+  overflow: hidden;
+}
+
+.c-book-section .book-swiper-item .text {
+  display: block;
+  width: 100%;
+  height: 32rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.c-book-section .book-swiper-item .image {
+  width: 150rpx;
+  height: 190rpx;
+}
+
+.c-book-section .end-book-item {
+  height: 280rpx;
+}

@@ -1,0 +1,14 @@
+  <view class="header">
+    <navigator class="bookshelf-icon fl" hover-class="none" url="../bookshelf/bookshelf">
+      <image class="img" src="/images/common/bookshelf.png" mode="aspectFill"></image>
+    </navigator>
+
+    <view class="site-type">
+      <view class="item {{source == 'man' ? 'active' : ''}}" data-val="man" bindtap="checkSource">男</view>
+      <view class="item {{source == 'lady' ? 'active' : ''}}" data-val="lady" bindtap="checkSource">女</view>
+    </view>
+
+    <navigator class="search-icon fr" hover-class="none" url="../search/search">
+      <image class="img" src="/images/index/search.png" mode="aspectFill"></image>
+    </navigator>
+  </view>

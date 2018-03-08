@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "读书排行",
+  "usingComponents": {
+    "header": "/components/header/header"
+  }
+}

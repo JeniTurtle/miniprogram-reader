@@ -1,0 +1,12 @@
+<template name="loading">
+  <view wx:if="{{isLoading}}" class="transition-loader">
+    <view class="transition-loader-inner">
+      <view class="label"></view>
+      <view class="label"></view>
+      <view class="label"></view>
+      <view class="label"></view>
+      <view class="label"></view>
+      <view class="label"></view>
+    </view>
+  </view>
+</template>

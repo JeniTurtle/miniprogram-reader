@@ -1,0 +1,146 @@
+.touch-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden
+}
+
+.content {
+  width: 100%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(202rpx);
+  transform: translateX(202rpx);
+  margin-left: -202rpx
+}
+
+.del {
+  background-color: #b93321;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 300;
+  width: 202rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-transform: translateX(202rpx);
+  transform: translateX(202rpx);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.touch-move-active .content,
+.touch-move-active .del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.book-list {
+  background: #fff;
+}
+
+.book-item {
+  overflow: hidden;
+  display: block;
+  height: 224rpx;
+  background: #fff;
+  padding: 0 30rpx;
+  margin-top: 30rpx;
+}
+
+.book-item .book-img {
+  float: left;
+  width: 172rpx;
+  height: 224rpx;
+  overflow: hidden;
+}
+
+.book-item .book-content {
+  margin-left: 176rpx;
+  padding-left: 30rpx;
+  overflow: hidden;
+  height: 100%;
+  background-size: 100% 1px;
+  background-image: linear-gradient(180deg,transparent 50%,#ddd 0);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: relative;
+}
+
+.book-item .book-content .score {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #b93321;
+  font-size: 30rpx;
+}  
+
+.book-item .book-content .name {
+  height: 46rpx;
+  color: #333!important;
+  font-weight: 400;
+  font-size: 32rpx;
+  padding-bottom: 6rpx;
+}
+
+.book-item .book-content .category {
+  height: 54rpx;
+  line-height: 52rpx;
+}
+
+.book-item .book-content .author {
+  color: #666666;
+}
+
+.book-item .book-content .chapter {
+  color: #666;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.book-item .book-content .chapter .time {
+  padding-right: 6rpx;
+  color: #999;
+}
+
+.book-item .book-content .status {
+  color: #b93321;
+}
+
+.book-item .book-content .status.success {
+  color: green;
+}
+
+.book-item .book-content .type {
+  color: #b93321;
+}
+
+.hide {
+  display: none;
+}
+
+.null-data {
+  text-align: center;
+  background: #fff;
+  color: #999;
+  padding-top: 240rpx;
+}
+
+.null-img {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.null-text {
+  display: block;
+  padding-top: 20rpx;
+  font-weight: 300;
+}
+
+.null-text .find-book {
+  display: inline;
+  text-decoration: underline;
+}

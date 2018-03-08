@@ -1,0 +1,35 @@
+<import src="/templates/booklist/booklist.wxml"/>
+
+<view class='container'>
+  <view class="book-detail">
+    <view class="book-item">
+      <image src="{{booklistDetail.Cover}}" mode="scaleToFill" class="book-img"></image>
+      <view class="book-content">
+        <view class="name">
+          <text>{{booklistDetail.Title}}</text>
+        </view>
+        <view class="category">
+          <view class="fl w-fill">
+            数量：
+            <text class="status">共{{booklistDetail.BookList.length}}本</text>
+          </view>
+          <view class="fl w-fill">
+            更新时间：
+            <text class="author">{{booklistDetail.UpdateTime}}</text>
+          </view>
+        </view>
+      </view>
+    </view>  
+    <view wx:if="{{booklistDetail.Description}}" class="read-desc">
+      <view class="{{moreDesc ? 'content moreDesc' : 'content'}}" bindtap="showMoreDesc">{{booklistDetail.Description}}</view>
+      <view class="{{moreDesc ? 'arrow up' : 'arrow'}}"></view>
+    </view>
+  </view>  
+
+  <view class="c-book-section mt20">
+    <view class="title">
+      书单列表
+    </view>
+    <template is="booklist" data="{{booklist: booklistDetail.BookList, showScore: true}}" />
+  </view>
+</view>
